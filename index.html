@@ -420,7 +420,7 @@
         </DIv>
         <DiV CLASs=bottom-footer>
             <diV clasS="container text-center">
-				<P>Copyright © 2023 JEM Logistics Solutions. All rights reserved. | Site by JEM LOGISTICS TEAMS MEMBERS
+				<P>Copyright © 2024 JEM Logistics Solutions. All rights reserved. | Site by JEM LOGISTICS TEAMS MEMBERS
             </Div>
         </Div>
     </div>
@@ -430,17 +430,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Consent</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        // Default consent state
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+        });
+
+        // Update consent state based on user interaction
+        function acceptCookies() {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted'
+            });
+            document.getElementById('cookie-consent-banner').style.display = 'none';
+        }
+
+        function declineCookies() {
+            gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied'
+            });
+            document.getElementById('cookie-consent-banner').style.display = 'none';
+        }
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="cookie-consent-banner" class="cookie-consent-banner">
         <p>We use cookies to improve your experience. By using our site, you agree to our use of cookies. <a href="#">Learn more</a></p>
-        <button id="accept-cookies">Accept</button>
-        <button id="decline-cookies">Decline</button>
+        <button onclick="acceptCookies()">Accept</button>
+        <button onclick="declineCookies()">Decline</button>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
+
 
 	
 	
